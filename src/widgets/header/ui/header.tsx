@@ -49,13 +49,9 @@ export const Header = () => {
     return (
         <header className="flex w-full bg-card items-center justify-between gap-3 rounded-xl border border-primary px-3 py-4 shadow-sm">
             <div className="flex gap-12 items-center">
-                <Link
-                    aria-label="EasyBooq home"
-                    className="flex items-center gap-2 text-primary"
-                    href="/"
-                >
+                <Link aria-label="Booqly home" className="flex items-center gap-2 text-primary" href="/">
                     <Logo />
-                    <span className="text-xl font-extrabold italic">EasyBooq</span>
+                    <span className="text-xl font-extrabold italic">Booqly</span>
                 </Link>
 
                 <nav aria-label="Primary navigation" className="hidden md:block">
@@ -99,12 +95,12 @@ export const Header = () => {
                     <SheetHeader className="flex items-start gap-3 p-0">
                         <SheetTitle className="sr-only">Navigation</SheetTitle>
                         <Link
-                            aria-label="EasyBooq home"
+                            aria-label="Booqly home"
                             className="flex items-center gap-2 text-primary"
                             href="/"
                         >
                             <Logo />
-                            <span className="text-xl font-extrabold italic">EasyBooq</span>
+                            <span className="text-xl font-extrabold italic">Booqly</span>
                         </Link>
                     </SheetHeader>
 

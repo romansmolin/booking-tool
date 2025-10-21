@@ -2,22 +2,24 @@ import { Button } from '@/shared/ui/button'
 import Image from 'next/image'
 
 const HERO_IMAGE =
-    'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3'
+    'https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3'
 
 export const HeroSection = () => {
     return (
-        <section className=" mx-auto flex w-full max-w-6xl flex-col items-center gap-10 rounded-3xl px-6 text-center  md:gap-12 md:px-14">
+        <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 rounded-3xl px-6 text-center md:gap-12 md:px-14">
             <div className="flex flex-col gap-6 md:gap-8">
                 <div className="text-sm font-semibold uppercase tracking-[0.35em] text-white px-8 py-2 rounded-full bg-primary/70 w-fit mx-auto">
-                    Booking made easy
+                    Effortless Bookings
                 </div>
+
                 <h1 className="text-4xl font-bold leading-tight sm:text-5xl md:text-6xl md:leading-[1.1]">
-                    Simplify your scheduling with
-                    <span className="text-primary"> EasyBooq</span>
+                    Simplify scheduling with
+                    <span className="text-primary"> Booqly</span>
                 </h1>
+
                 <p className="mx-auto max-w-2xl text-base text-primary sm:text-lg md:text-xl">
-                    Manage meetings effortlessly across platforms. Connect your calendar, send invites,
-                    and sync with one powerful tool.
+                    Create your booking page, manage your schedule, and send automatic reminders — all in
+                    one intuitive platform built for small businesses and freelancers.
                 </p>
             </div>
 
@@ -27,14 +29,14 @@ export const HeroSection = () => {
                     size="lg"
                     variant="ghost"
                 >
-                    <span>Get Started</span>
+                    <span>Join Early Access</span>
                 </Button>
                 <Button
-                    className="btn-hero h-12 btn-hero--blue text-lg font-semibold text-slate-900 w-full"
+                    className="btn-hero btn-hero--blue text-lg font-semibold text-slate-900 w-full"
                     size="lg"
                     variant="ghost"
                 >
-                    <span>Learn More</span>
+                    <span>Watch Demo</span>
                 </Button>
             </div>
 
@@ -42,7 +44,7 @@ export const HeroSection = () => {
                 <div className="aspect-video w-full">
                     <Image
                         priority
-                        alt="People collaborating in an office setting"
+                        alt="Small business owner using Booqly dashboard"
                         className="h-full w-full object-cover object-center"
                         height={900}
                         src={HERO_IMAGE}

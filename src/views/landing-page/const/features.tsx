@@ -3,50 +3,130 @@ import { ArrowBigRight } from 'lucide-react'
 
 export const featuresData = [
     {
-        badgeText: 'Enhance Your Business',
+        badgeText: 'Effortless Setup',
         imageUrl:
             'https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3',
         position: 'right' as const,
-        title: 'Create a professional booking page in minutes',
+        title: 'Create your own booking page in minutes',
         subtitle:
-            'Build a sleek, customizable booking interface that reflects your brand. No coding required, just drag and drop.',
+            'Launch a clean, professional booking page instantly. Customize colors, layout, and branding — no apps or coding required.',
         listItems: [
-            'Customize your look and feel.',
-            'Match your brand colors and style.',
-            'Mobile responsive design.',
+            'Personal link like Booqly.eu/salon-lina',
+            'Customize colors, fonts, and brand visuals',
+            'Works perfectly on any device',
         ],
         mainButton: (
-            <Button size="lg" variant="default">
-                Explore templates
+            <Button
+                className="btn-hero w-full md:w-auto h-12 text-lg font-semibold text-slate-900"
+                size="lg"
+                variant="default"
+            >
+                Create My Page
             </Button>
         ),
         secondaryButton: (
-            <Button className="flex items-center" size="lg" variant="outline">
-                Contact Us <ArrowBigRight />
+            <Button
+                className="btn-hero w-full md:w-auto h-12 btn-hero--blue text-lg font-semibold text-slate-900"
+                size="lg"
+                variant="default"
+            >
+                See Demo <ArrowBigRight />
             </Button>
         ),
     },
     {
-        badgeText: 'Teams & Workflows',
+        badgeText: 'Smart Scheduling',
         imageUrl:
             'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3',
         position: 'left' as const,
-        title: 'Track and manage your bookings with powerful analytics',
+        title: 'Stay in control with smart, auto-generated schedules',
         subtitle:
-            'Gain real-time insights into your scheduling patterns, client interactions, and business performance.',
+            'Booqly automatically generates available time slots based on your working hours and service durations — no double-bookings, no manual updates.',
         listItems: [
-            'Drag-and-drop builder for multi-step booking flows.',
-            'Conditional logic to gather the right details every time.',
-            'Instant hand-offs to your CRM, helpdesk, or payment tools.',
+            'Auto-slots by staff availability and service length',
+            'Prevent overlaps and double-bookings automatically',
+            'Drag-and-drop daily calendar view',
         ],
         mainButton: (
-            <Button size="lg" variant="default">
-                Build a workflow
+            <Button
+                className="btn-hero w-full md:w-auto text-lg font-semibold text-slate-900"
+                size="lg"
+                variant="default"
+            >
+                Try Scheduling
             </Button>
         ),
         secondaryButton: (
-            <Button size="lg" variant="outline">
-                See templates
+            <Button
+                className="btn-hero w-full md:w-auto btn-hero--blue text-lg font-semibold text-slate-900"
+                size="lg"
+                variant="default"
+            >
+                Learn More <ArrowBigRight />
+            </Button>
+        ),
+    },
+    {
+        badgeText: 'Automated Reminders',
+        imageUrl:
+            'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3',
+        position: 'right' as const,
+        title: 'Reduce no-shows with smart notifications',
+        subtitle:
+            'Automatic reminders keep clients and staff in sync — through email or Telegram. No missed appointments, no manual follow-ups.',
+        listItems: [
+            '24h and 1h reminders before each visit',
+            'Email and Telegram notifications out-of-the-box',
+            'Instant updates when clients reschedule or cancel',
+        ],
+        mainButton: (
+            <Button
+                className="btn-hero w-full md:w-auto text-lg font-semibold text-slate-900"
+                size="lg"
+                variant="default"
+            >
+                Automate My Bookings
+            </Button>
+        ),
+        secondaryButton: (
+            <Button
+                className="btn-hero w-full md:w-auto btn-hero--blue text-lg font-semibold text-slate-900"
+                size="lg"
+                variant="default"
+            >
+                How It Works <ArrowBigRight />
+            </Button>
+        ),
+    },
+    {
+        badgeText: 'Localization & Trust',
+        imageUrl:
+            'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3',
+        position: 'left' as const,
+        title: 'Built for small European businesses',
+        subtitle:
+            'Multilingual, GDPR-compliant, and hosted in the EU. Booqly is designed for modern European creators and service providers.',
+        listItems: [
+            'Available in English, Latvian, and Russian',
+            'GDPR-ready with secure EU hosting',
+            'Clean, trustworthy design your clients will love',
+        ],
+        mainButton: (
+            <Button
+                className="btn-hero w-full md:w-auto text-lg font-semibold text-slate-900"
+                size="lg"
+                variant="default"
+            >
+                Join Early Access
+            </Button>
+        ),
+        secondaryButton: (
+            <Button
+                className="btn-hero w-full md:w-auto btn-hero--blue text-lg font-semibold text-slate-900"
+                size="lg"
+                variant="default"
+            >
+                Contact Us <ArrowBigRight />
             </Button>
         ),
     },

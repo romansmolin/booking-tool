@@ -29,7 +29,7 @@ const LandingPageLayout = async ({
     return (
         <html suppressHydrationWarning className="overflow-x-hidden" lang="">
             <body
-                className={`${nunito.className} antialiased overflow-x-hidden bg-background text-foreground`}
+                className={`${nunito.className} antialiased overflow-x-hidden bg-white dark:bg-background text-foreground`}
             >
                 <ThemeProvider
                     disableTransitionOnChange
@@ -38,7 +38,7 @@ const LandingPageLayout = async ({
                     defaultTheme="dark"
                 >
                     <NextIntlClientProvider locale="lv">
-                        <div className="flex flex-col max-w-7xl gap-26 px-2 pt-2 mx-auto">
+                        <div className="flex flex-col max-w-7xl gap-26 px-2 py-2 mx-auto">
                             <Header />
                             <main className="m-auto min-h-svh px-2 flex flex-col">{children}</main>
                         </div>
