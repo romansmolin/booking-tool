@@ -1,10 +1,10 @@
-import { useTranslations } from 'next-intl';
+// import { useTranslations } from 'next-intl'
 import React from 'react'
 
 const LandingPage = () => {
-    const t = useTranslations('HomePage');
+    // const t = useTranslations('HomePage')
 
-    return <div>{t('title')}</div>
+    return <div></div>
 }
 
 export default LandingPage

@@ -1,4 +1,6 @@
+import { ThemeProvider } from '@/app/_providers'
 import { routing } from '@/shared/i18n/routing'
+import { Header } from '@/widgets/header'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { Nunito } from 'next/font/google'
 import { notFound } from 'next/navigation'
@@ -26,10 +28,22 @@ const LandingPageLayout = async ({
 
     return (
         <html suppressHydrationWarning className="overflow-x-hidden" lang="">
-            <body className={`${nunito.className} antialiased overflow-x-hidden`}>
-                <NextIntlClientProvider locale="lv">
-                    <main className="m-auto max-w-7xl h-svh bg-red-500 px-2">{children}</main>
-                </NextIntlClientProvider>
+            <body
+                className={`${nunito.className} antialiased overflow-x-hidden bg-background text-foreground`}
+            >
+                <ThemeProvider
+                    disableTransitionOnChange
+                    enableSystem
+                    attribute="class"
+                    defaultTheme="dark"
+                >
+                    <NextIntlClientProvider locale="lv">
+                        <div className="space-y-2 px-2 pt-2">
+                            <Header />
+                            <main className="m-auto max-w-7xl h-svh px-2">{children}</main>
+                        </div>
+                    </NextIntlClientProvider>
+                </ThemeProvider>
             </body>
         </html>
     )

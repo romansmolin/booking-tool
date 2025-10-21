@@ -3,9 +3,11 @@
 import { cn } from '@/shared/lib/utils'
 import { Button } from '@/shared/ui/button'
 import { Logo } from '@/shared/ui/logo'
-import { MenuIcon, X } from 'lucide-react'
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/shared/ui/sheet'
+import { MenuIcon } from 'lucide-react'
+import Link from 'next/link'
 
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 
 const NAV_ITEMS = [
     { label: 'Features', href: '#features' },
@@ -14,105 +16,103 @@ const NAV_ITEMS = [
     { label: 'Join Us', href: '#join-us' },
 ]
 
-const NavLinks = ({ className }: { className?: string }) => (
-    <ul className={cn('list-none', className)}>
+type NavListProps = {
+    direction?: 'horizontal' | 'vertical'
+    className?: string
+}
+
+const NavList = ({ direction = 'vertical', className }: NavListProps) => (
+    <ul
+        className={cn(
+            'list-none',
+            direction === 'vertical'
+                ? 'flex flex-col gap-4 text-lg'
+                : 'flex items-center gap-4 text-sm mt-[5px]',
+            className
+        )}
+    >
         {NAV_ITEMS.map((item) => (
-            <li key={item.href}>
-                <a
-                    className="block rounded-md px-2 py-1 font-medium transition-colors duration-200 hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+            <li key={item.href} className="group">
+                <Link
+                    className="block text-lg font-extrabold rounded-md px-2  border-primary transition-all duration-300 "
                     href={item.href}
                 >
                     {item.label}
-                </a>
+                </Link>
+                <div className="group-hover:opacity-100 group-hover:w-full w-0 opacity-0 transition-all ease-in-out duration-300 h-0.5 rounded-2xl bg-primary"></div>
             </li>
         ))}
     </ul>
 )
 
 export const Header = () => {
-    const [open, setOpen] = useState(false)
-    const headerRef = useRef<HTMLElement | null>(null)
-    const [menuTop, setMenuTop] = useState<number | null>(null)
-
-    useEffect(() => {
-        const updateMenuTop = () => {
-            if (!headerRef.current) {
-                return
-            }
-
-            const { bottom } = headerRef.current.getBoundingClientRect()
-            setMenuTop(bottom + 16) // place the menu just below the header with 1rem gap
-        }
-
-        updateMenuTop()
-        window.addEventListener('resize', updateMenuTop)
-
-        return () => {
-            window.removeEventListener('resize', updateMenuTop)
-        }
-    }, [])
-
-    useEffect(() => {
-        if (!open) {
-            return
-        }
-
-        if (!headerRef.current) {
-            return
-        }
-
-        const { bottom } = headerRef.current.getBoundingClientRect()
-        setMenuTop(bottom + 16)
-    }, [open])
-
     return (
-        <>
-            <header ref={headerRef} className="rounded-xl border border-primary px-3 py-4 shadow-sm">
-                <div className="flex items-center justify-between gap-3">
-                    <a
-                        aria-label="EasyBooq home"
-                        className="flex items-center gap-2 text-primary"
-                        href="/"
+        <header className="flex max-w-7xl m-auto bg-card items-center justify-between gap-3 rounded-xl border border-primary px-3 py-4 shadow-sm">
+            <div className="flex gap-12 items-center">
+                <Link
+                    aria-label="EasyBooq home"
+                    className="flex items-center gap-2 text-primary"
+                    href="/"
+                >
+                    <Logo />
+                    <span className="text-xl font-extrabold italic">EasyBooq</span>
+                </Link>
+
+                <nav aria-label="Primary navigation" className="hidden md:block">
+                    <NavList className="text-primary" direction="horizontal" />
+                </nav>
+            </div>
+
+            <div className="hidden md:flex gap-3">
+                <Button
+                    className="relative border border-slate-900 bg-linear-to-b from-[#f9f9fb] to-[#e5e7eb]  text-lg font-semibold text-slate-900 shadow-[0_3px_0_rgba(15,23,42,0.85)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_0_rgba(15,23,42,0.75)] focus-visible:ring-0 active:translate-y-[2px] active:shadow-[0_6px_0_rgba(15,23,42,0.85)] "
+                    size="lg"
+                    variant="ghost"
+                >
+                    <span className="block  from-white/90 to-transparent px-2 py-0.5">Demo</span>
+                </Button>
+                <Button
+                    className="relative  border border-slate-900 bg-linear-to-b from-[#e7f0ff] to-[#cfdfff]  text-lg font-semibold text-slate-900 shadow-[0_3px_0_rgba(15,23,42,0.85)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_0_rgba(15,23,42,0.75)] focus-visible:ring-0 active:translate-y-[2px] active:shadow-[0_6px_0_rgba(15,23,42,0.85)] "
+                    size="lg"
+                    variant="ghost"
+                >
+                    <span className="block  from-white/80 to-transparent px-2 py-0.5">Contact</span>
+                </Button>
+            </div>
+            <Sheet>
+                <SheetTrigger asChild>
+                    <Button
+                        aria-controls="mobile-navigation"
+                        className="border-primary bg-transparent text-primary md:hidden"
+                        size="icon"
+                        type="button"
+                        variant="outline"
                     >
-                        <Logo />
-                        <span className="text-xl font-extrabold italic">EasyBooq</span>
-                    </a>
+                        <MenuIcon aria-hidden="true" />
+                    </Button>
+                </SheetTrigger>
 
-                    <nav aria-label="Primary navigation" className="hidden md:block">
-                        <NavLinks className="flex items-center gap-6 text-sm text-primary" />
-                    </nav>
-
-                    <div className="md:hidden">
-                        <Button
-                            aria-controls="mobile-navigation"
-                            aria-expanded={open}
-                            aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
-                            className="border-primary bg-transparent text-primary"
-                            size="icon"
-                            type="button"
-                            variant="outline"
-                            onClick={() => setOpen((prev) => !prev)}
+                <SheetContent
+                    aria-label="Mobile navigation"
+                    className="md:hidden gap-8 border-l border-primary px-4 py-6"
+                >
+                    <SheetHeader className="flex items-start gap-3 p-0">
+                        <SheetTitle className="sr-only">Navigation</SheetTitle>
+                        <Link
+                            aria-label="EasyBooq home"
+                            className="flex items-center gap-2 text-primary"
+                            href="/"
                         >
-                            {open ? <X aria-hidden="true" /> : <MenuIcon aria-hidden="true" />}
-                        </Button>
-                    </div>
-                </div>
-            </header>
+                            <Logo />
+                            <span className="text-xl font-extrabold italic">EasyBooq</span>
+                        </Link>
+                    </SheetHeader>
 
-            <nav
-                aria-hidden={!open}
-                aria-label="Primary navigation"
-                id="mobile-navigation"
-                style={menuTop ? { top: `${menuTop}px` } : undefined}
-                className={cn(
-                    'pointer-events-none fixed inset-x-4 z-50 md:hidden rounded-xl border border-primary bg-background/95 px-4 text-center text-primary text-lg shadow-lg backdrop-blur transition-all duration-300 ease-in-out',
-                    open
-                        ? 'pointer-events-auto opacity-100 translate-y-0 py-4'
-                        : 'opacity-0 -translate-y-2 py-0'
-                )}
-            >
-                <NavLinks className="flex flex-col gap-3" />
-            </nav>
-        </>
+                    <nav id="mobile-navigation">
+                        <NavList className="text-primary" />
+                    </nav>
+                </SheetContent>
+            </Sheet>
+        </header>
     )
 }
