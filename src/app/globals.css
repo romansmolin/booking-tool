@@ -173,3 +173,46 @@
         @apply bg-background text-foreground;
     }
 }
+
+@layer components {
+    .btn-hero {
+        --btn-hero-bg: linear-gradient(180deg, #f9f9fb 0%, #e5e7eb 100%);
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 28px;
+        border: 2px solid #0f172a;
+        color: #0f172a;
+        background: var(--btn-hero-bg);
+        box-shadow: 0 3px 0 rgba(15, 23, 42, 0.85);
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+        text-decoration: none;
+    }
+
+    .btn-hero:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 0 rgba(15, 23, 42);
+        background: var(--btn-hero-bg);
+    }
+
+    .btn-hero:active {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 0 rgba(15, 23, 42);
+        background: var(--btn-hero-bg);
+    }
+
+    .btn-hero:focus-visible {
+        outline: none;
+        box-shadow:
+            0 3px 0 rgba(15, 23, 42, 0.85),
+            0 0 0 3px rgba(191, 219, 254, 0.55);
+        background: var(--btn-hero-bg);
+    }
+
+    .btn-hero--blue {
+        --btn-hero-bg: linear-gradient(180deg, #e7f0ff 0%, #cfdfff 100%);
+    }
+}

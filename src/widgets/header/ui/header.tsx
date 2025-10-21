@@ -47,7 +47,7 @@ const NavList = ({ direction = 'vertical', className }: NavListProps) => (
 
 export const Header = () => {
     return (
-        <header className="flex max-w-7xl m-auto bg-card items-center justify-between gap-3 rounded-xl border border-primary px-3 py-4 shadow-sm">
+        <header className="flex w-full bg-card items-center justify-between gap-3 rounded-xl border border-primary px-3 py-4 shadow-sm">
             <div className="flex gap-12 items-center">
                 <Link
                     aria-label="EasyBooq home"
@@ -63,20 +63,20 @@ export const Header = () => {
                 </nav>
             </div>
 
-            <div className="hidden md:flex gap-3">
+            <div className="hidden gap-3 md:flex">
                 <Button
-                    className="relative border border-slate-900 bg-linear-to-b from-[#f9f9fb] to-[#e5e7eb]  text-lg font-semibold text-slate-900 shadow-[0_3px_0_rgba(15,23,42,0.85)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_0_rgba(15,23,42,0.75)] focus-visible:ring-0 active:translate-y-[2px] active:shadow-[0_6px_0_rgba(15,23,42,0.85)] "
+                    className="btn-hero text-lg font-semibold text-slate-900 "
                     size="lg"
                     variant="ghost"
                 >
-                    <span className="block  from-white/90 to-transparent px-2 py-0.5">Demo</span>
+                    <span>Demo</span>
                 </Button>
                 <Button
-                    className="relative  border border-slate-900 bg-linear-to-b from-[#e7f0ff] to-[#cfdfff]  text-lg font-semibold text-slate-900 shadow-[0_3px_0_rgba(15,23,42,0.85)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_0_rgba(15,23,42,0.75)] focus-visible:ring-0 active:translate-y-[2px] active:shadow-[0_6px_0_rgba(15,23,42,0.85)] "
+                    className="btn-hero btn-hero--blue  text-lg font-semibold text-slate-900"
                     size="lg"
                     variant="ghost"
                 >
-                    <span className="block  from-white/80 to-transparent px-2 py-0.5">Contact</span>
+                    <span>Contact</span>
                 </Button>
             </div>
             <Sheet>
