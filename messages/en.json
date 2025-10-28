@@ -1,5 +1,161 @@
 {
+    "Header": {
+        "brandAriaLabel": "Booqly home",
+        "nav": {
+            "features": "Features",
+            "solutions": "Solutions",
+            "faq": "FAQ",
+            "join": "Join Us"
+        },
+        "demo": "Demo",
+        "contact": "Contact",
+        "navTitle": "Navigation"
+    },
+    "Landing": {
+        "hero": {
+            "badge": "Effortless Bookings",
+            "title": "Simplify scheduling with <highlight>Booqly</highlight>",
+            "description": "Create your booking page, manage your schedule, and send automatic reminders - all in one intuitive platform built for small businesses and freelancers.",
+            "primaryCta": "Join Early Access",
+            "secondaryCta": "Watch Demo",
+            "imageAlt": "Small business owner using the Booqly dashboard"
+        },
+        "howItWorks": {
+            "title": "How <highlight>Booqly</highlight> Works",
+            "cards": {
+                "subscriptions": {
+                    "title": "Flexible Subscriptions",
+                    "description": "Choose a plan that fits your business - from individual professionals to growing teams."
+                },
+                "setup": {
+                    "title": "Effortless Setup",
+                    "description": "Add your services, team members, and booking rules in minutes - no tech skills required."
+                },
+                "bento": {
+                    "title": "Instant Bento Page",
+                    "description": "Generate a beautiful, ready-to-share booking page that reflects your brand and style."
+                },
+                "widget": {
+                    "title": "Website Widget",
+                    "description": "Embed the Booqly widget on your site and let clients book directly without leaving your page."
+                },
+                "calendar": {
+                    "title": "Google Calendar Sync",
+                    "description": "Automatically connect and sync your Google Calendar to prevent double bookings and keep everything updated."
+                },
+                "automation": {
+                    "title": "Automated Booking Flow",
+                    "description": "Enjoy a fully automated, organic flow - clients can book anytime while you stay focused on what matters."
+                }
+            }
+        },
+        "features": {
+            "brandedPage": {
+                "badge": "Branded Booking Page",
+                "title": "Launch a booking site that mirrors your studio",
+                "subtitle": "Spin up a conversion-ready page with services, staff profiles, testimonials, and before/after galleries in minutes.",
+                "list": {
+                    "services": "Configure services, pricing, and durations the way you work",
+                    "staff": "Showcase staff expertise, availability, and individual calendars",
+                    "socialProof": "Display reviews and work examples to build trust fast"
+                },
+                "primaryCta": "Plan my page",
+                "secondaryCta": "See sample page"
+            },
+            "smartScheduling": {
+                "badge": "Intelligent Scheduling",
+                "title": "Stay fully booked without the spreadsheet chaos",
+                "subtitle": "Booqly builds slots using staff workload, service length, buffers, and Google Calendar sync - so every appointment just fits.",
+                "list": {
+                    "autoSlots": "Auto-generate slots that respect buffers and working hours",
+                    "calendarSync": "Two-way Google Calendar sync keeps your team aligned",
+                    "reminders": "Automatic reminders for clients and staff reduce no-shows"
+                },
+                "primaryCta": "Try smart scheduling",
+                "secondaryCta": "See how it works"
+            },
+            "omnichannelWidget": {
+                "badge": "Omnichannel Booking",
+                "title": "Let clients book from any channel",
+                "subtitle": "Share a booking link or embed the widget on your site, socials, or messengers - the flow stays fast and localized.",
+                "list": {
+                    "widget": "Drop-in widget for websites, landing pages, and link-in-bio",
+                    "languages": "Client experience available in English, Latvian, and Russian",
+                    "flow": "Friendly booking flow that confirms appointments in under a minute"
+                },
+                "primaryCta": "Get the widget",
+                "secondaryCta": "Preview the client flow"
+            },
+            "operationalControl": {
+                "badge": "Data & Control",
+                "title": "Onboard quickly, export whenever you need",
+                "subtitle": "Guided onboarding helps you go live today, and CSV export keeps your records portable.",
+                "list": {
+                    "onboarding": "Guided steps make setup quick for services and staff",
+                    "updates": "Adjust availability, pricing, and policies anytime",
+                    "export": "Export bookings and customer data to CSV in a click"
+                },
+                "primaryCta": "Start onboarding",
+                "secondaryCta": "View export options"
+            }
+        },
+        "cta": {
+            "label": "Early Access",
+            "title": "Stop losing bookings to DMs",
+            "description": "Booqly centralizes scheduling, reminders, and client experience so you can launch fast and stay organized.",
+            "primaryCta": "Join early access",
+            "secondaryCta": "Watch product teaser",
+            "imageAlt": "Team using the Booqly dashboard"
+        },
+        "languageSwitcher": {
+            "label": "Language",
+            "languages": {
+                "en": "English",
+                "ru": "Russian",
+                "lv": "Latvian"
+            }
+        },
+        "about": {
+            "title": "Built for small European service teams",
+            "description": "Booqly is the all-in-one booking platform helping salons and studios turn interest into confirmed visits. Configure services, staff, and social proof once - the system handles the rest.",
+            "mainImageAlt": "Team planning bookings with Booqly",
+            "tiles": {
+                "onboarding": {
+                    "title": "Onboard in minutes",
+                    "description": "Add services, staff profiles, pricing, and publish instantly - no clunky tools to stitch together.",
+                    "cta": "Start onboarding"
+                },
+                "widget": {
+                    "title": "Share & embed anywhere",
+                    "description": "Use a single booking link or drop the widget into your site, socials, or messengers.",
+                    "cta": "Get the widget"
+                },
+                "availability": {
+                    "title": "Availability rules that fit you",
+                    "description": "Set buffers, quiet hours, and staff schedules - Booqly updates slots automatically.",
+                    "cta": "Configure slots"
+                },
+                "privacy": {
+                    "title": "EU privacy & easy export",
+                    "description": "Localized experience in EN/LV/RU, GDPR-minded, and CSV export whenever you need it.",
+                    "cta": "Learn more"
+                }
+            }
+        },
+        "waitlist": {
+            "title": "Join the waitlist",
+            "description": "Be first to try Booqly when we open the doors. We're inviting a handful of founding teams to shape the product.",
+            "emailAriaLabel": "Email address",
+            "emailPlaceholder": "Enter your email",
+            "submit": "Join the waitlist",
+            "submitting": "Joining...",
+            "success": "Thanks! We'll reach out with early access updates.",
+            "error": "Unable to join the waitlist. Please try again.",
+            "invalidEmail": "Please provide a valid email address.",
+            "joinedCount": "+100 people already joined"
+        }
+    },
     "HomePage": {
-      "title": "Hello world!"
+        "title": "Hello world!"
     }
-  }
+}

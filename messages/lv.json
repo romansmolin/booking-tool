@@ -1,5 +1,161 @@
 {
+    "Header": {
+        "brandAriaLabel": "Booqly sākumlapa",
+        "nav": {
+            "features": "Iespējas",
+            "solutions": "Risinājumi",
+            "faq": "BUJ",
+            "join": "Pievienoties"
+        },
+        "demo": "Demo",
+        "contact": "Kontakti",
+        "navTitle": "Navigācija"
+    },
+    "Landing": {
+        "hero": {
+            "badge": "Vienkārša pierakstu sistēma",
+            "title": "Padariet pierakstus vienkāršus ar <highlight>Booqly</highlight>",
+            "description": "Izveidojiet rezervāciju lapu, pārvaldiet grafikus un sūtiet atgādinājumus - viss vienā ērtā risinājumā mazajiem uzņēmumiem un freelanceriem.",
+            "primaryCta": "Pievienoties agrīnajai piekļuvei",
+            "secondaryCta": "Skatīties demo",
+            "imageAlt": "Uzņēmēja strādā ar Booqly paneli"
+        },
+        "howItWorks": {
+            "title": "Kā darbojas <highlight>Booqly</highlight>",
+            "cards": {
+                "subscriptions": {
+                    "title": "Elastīgi abonementi",
+                    "description": "Izvēlieties plānu, kas atbilst jūsu biznesam - no individuāliem speciālistiem līdz augošām komandām."
+                },
+                "setup": {
+                    "title": "Viegla iestatīšana",
+                    "description": "Pievienojiet pakalpojumus, komandu un rezervācijas noteikumus dažu minūšu laikā - bez tehniskām zināšanām."
+                },
+                "bento": {
+                    "title": "Momentāna Bento lapa",
+                    "description": "Ģenerējiet skaistu, kopīgošanai gatavu rezervāciju lapu, kas atspoguļo jūsu zīmolu."
+                },
+                "widget": {
+                    "title": "Tīmekļa vietnes logrīks",
+                    "description": "Iebūvējiet Booqly logrīku savā lapā un ļaujiet klientiem rezervēt tieši tur."
+                },
+                "calendar": {
+                    "title": "Google Calendar sinhronizācija",
+                    "description": "Automātiski sinhronizējiet Google Calendar, lai izvairītos no dubultiem pierakstiem un saglabātu visu aktuālu."
+                },
+                "automation": {
+                    "title": "Automatizēts rezervācijas process",
+                    "description": "Pilnībā automatizēta plūsma - klienti rezervē jebkurā laikā, kamēr jūs fokusējaties uz darbu."
+                }
+            }
+        },
+        "features": {
+            "brandedPage": {
+                "badge": "Zīmola rezervāciju lapa",
+                "title": "Palaižiet rezervāciju lapu, kas atspoguļo jūsu studiju",
+                "subtitle": "Dažu minūšu laikā izveidojiet pārvērstošu lapu ar pakalpojumiem, komandas profiliem, atsauksmēm un darba piemēriem.",
+                "list": {
+                    "services": "Konfigurējiet pakalpojumus, cenas un ilgumus tieši kā strādājat",
+                    "staff": "Parādiet katra darbinieka prasmes un pieejamību",
+                    "socialProof": "Publicējiet atsauksmes un darba piemērus, lai ātri radītu uzticēšanos"
+                },
+                "primaryCta": "Plānot manu lapu",
+                "secondaryCta": "Skatīt paraugu"
+            },
+            "smartScheduling": {
+                "badge": "Gudrs grafiks",
+                "title": "Palieciet aizņemti bez izklājlapu haosa",
+                "subtitle": "Booqly veido laikus, ņemot vērā komandas noslodzi, pakalpojumu garumu, buferus un Google kalendāra sinhronizāciju.",
+                "list": {
+                    "autoSlots": "Automātiski laiki, kas respektē buferus un darba stundas",
+                    "calendarSync": "Divvirzienu Google Calendar sinhronizācija uztur visus vienā grafikā",
+                    "reminders": "Automātiski atgādinājumi klientiem un darbiniekiem samazina neierašanās gadījumus"
+                },
+                "primaryCta": "Izmēģināt gudro grafiku",
+                "secondaryCta": "Uzzināt, kā tas strādā"
+            },
+            "omnichannelWidget": {
+                "badge": "Rezervācijas kanāli",
+                "title": "Ļaujiet klientiem pieteikties jebkur",
+                "subtitle": "Dalieties ar saiti vai iebūvējiet logrīku savā lapā, sociālajos tīklos vai saziņā - plūsma ir ātra un lokalizēta.",
+                "list": {
+                    "widget": "Vienkārši iebūvējams logrīks tīmekļa vietnēm un link-in-bio",
+                    "languages": "Klientu pieredze pieejama angļu, latviešu un krievu valodā",
+                    "flow": "Draudzīgs rezervācijas process, kas apstiprina vizīti mazāk nekā minūtes laikā"
+                },
+                "primaryCta": "Saņemt logrīku",
+                "secondaryCta": "Apskatīt klienta plūsmu"
+            },
+            "operationalControl": {
+                "badge": "Dati un kontrole",
+                "title": "Ātra ieviešana un CSV eksports pēc vajadzības",
+                "subtitle": "Vadīta ievadīšana ļauj startēt šodien, bet CSV eksports nodrošina datu pieejamību.",
+                "list": {
+                    "onboarding": "Vadīti soļi ātrai pakalpojumu un komandas konfigurācijai",
+                    "updates": "Mainiet pieejamību, cenas un noteikumus jebkurā brīdī",
+                    "export": "Eksportējiet rezervācijas un klientu datus CSV formātā ar vienu klikšķi"
+                },
+                "primaryCta": "Sākt ievadīšanu",
+                "secondaryCta": "Apskatīt eksporta iespējas"
+            }
+        },
+        "cta": {
+            "label": "Agrīnā piekļuve",
+            "title": "Pārtrauciet rezervācijas īsziņās",
+            "description": "Booqly apvieno grafikus, atgādinājumus un klientu pieredzi, lai jūs varētu startēt ātri un organizēti.",
+            "primaryCta": "Pievienoties agrīnajai piekļuvei",
+            "secondaryCta": "Skatīt produkta video",
+            "imageAlt": "Komanda izmanto Booqly paneli"
+        },
+        "languageSwitcher": {
+            "label": "Valoda",
+            "languages": {
+                "en": "Angļu",
+                "ru": "Krievu",
+                "lv": "Latviešu"
+            }
+        },
+        "about": {
+            "title": "Radīts mazām pakalpojumu komandām Eiropā",
+            "description": "Booqly ir vienota rezervāciju platforma, kas palīdz saloniem un studijām pārvērst intereses pieteikumos. Konfigurējiet pakalpojumus, komandu un sociālo pierādījumu vienreiz - sistēma parūpēsies par pārējo.",
+            "mainImageAlt": "Komanda plāno rezervācijas ar Booqly",
+            "tiles": {
+                "onboarding": {
+                    "title": "Starts dažu minūšu laikā",
+                    "description": "Pievienojiet pakalpojumus, komandas profilus un cenas, publicējiet uzreiz - bez sarežģītām integrācijām.",
+                    "cta": "Sākt ievadīšanu"
+                },
+                "widget": {
+                    "title": "Dalieties un iegultiet visur",
+                    "description": "Viena saite vai iebūvēts logrīks jūsu mājaslapai, sociālajiem tīkliem un saziņai.",
+                    "cta": "Saņemt logrīku"
+                },
+                "availability": {
+                    "title": "Pieejamības noteikumi pēc jūsu vajadzībām",
+                    "description": "Iestatiet buferus, klusos laikus un darbinieku grafikus - sloti atjaunojas automātiski.",
+                    "cta": "Konfigurēt slotus"
+                },
+                "privacy": {
+                    "title": "ES privātums un vienkāršs eksports",
+                    "description": "Lokalizācija EN/LV/RU, GDPR prasību ievērošana un CSV eksports, kad vien nepieciešams.",
+                    "cta": "Uzzināt vairāk"
+                }
+            }
+        },
+        "waitlist": {
+            "title": "Pievienojieties gaidīšanas sarakstam",
+            "description": "Esiet starp pirmajiem, kas izmēģina Booqly. Mēs aicinām dažas komandas, lai veidotu produktu kopā.",
+            "emailAriaLabel": "E-pasta adrese",
+            "emailPlaceholder": "Ievadiet e-pastu",
+            "submit": "Pievienoties gaidīšanas sarakstam",
+            "submitting": "Pievienojam...",
+            "success": "Paldies! Mēs sazināsimies, tiklīdz atvērsim agrīno piekļuvi.",
+            "error": "Neizdevās pievienoties. Lūdzu, mēģiniet vēlreiz.",
+            "invalidEmail": "Lūdzu, ievadiet derīgu e-pastu.",
+            "joinedCount": "+100 cilvēki jau pievienojās"
+        }
+    },
     "HomePage": {
-      "title": "Sveiks!"
+        "title": "Sveiks!"
     }
-  }
+}

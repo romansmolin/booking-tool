@@ -8,20 +8,20 @@ import reactPlugin from 'eslint-plugin-react'
 import unusedImports from 'eslint-plugin-unused-imports'
 
 export default [
-    // Ignore build/artifacts
     { ignores: ['.next/**/*', 'node_modules/**/*', 'public/**/*'] },
 
-    // Base JS rules
     js.configs.recommended,
 
-    // TypeScript/React project rules
     {
         files: ['**/*.{ts,tsx}'],
         languageOptions: {
             parser: tsParser,
             ecmaVersion: 2022,
             sourceType: 'module',
+            globals: { process: 'readonly' },
         },
+        env: { node: true },
+        linterOptions: { reportUnusedDisableDirectives: true },
         plugins: {
             '@typescript-eslint': tseslint,
             import: importPlugin,

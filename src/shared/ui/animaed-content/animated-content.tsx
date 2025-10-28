@@ -20,6 +20,7 @@ interface AnimatedContentProps {
     threshold?: number
     delay?: number
     onComplete?: () => void
+    className?: string
 }
 
 const AnimatedContent: React.FC<AnimatedContentProps> = ({
@@ -35,6 +36,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
     threshold = 0.1,
     delay = 0,
     onComplete,
+    className = '',
 }) => {
     // eslint-disable-next-line no-undef
     const ref = useRef<HTMLDivElement>(null)
@@ -87,7 +89,11 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
         onComplete,
     ])
 
-    return <div ref={ref}>{children}</div>
+    return (
+        <div ref={ref} className={className}>
+            {children}
+        </div>
+    )
 }
 
 export default AnimatedContent

@@ -1,4 +1,9 @@
+import { AnimatedContent } from '@/shared/ui/animaed-content'
 import { Button } from '@/shared/ui/button'
+import { BookmarkCheck, PersonStanding, Send, ShieldEllipsis } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
+import Image from 'next/image'
+import Link from 'next/link'
 
 interface About3Props {
     title?: string
@@ -32,95 +37,90 @@ interface About3Props {
     }>
 }
 
-export const AboutSection = ({
-    title = 'About Booqly',
-    description = 'We help small European businesses and freelancers accept bookings without the complexity — beautiful public pages, smart schedules, and automated reminders in one simple platform.',
+const tiles = [
+    {
+        key: 'onboarding',
+        defaultHref: '#join',
+        icon: <BookmarkCheck className="size-8 text-primary" />,
+    },
+    {
+        key: 'widget',
+        defaultHref: '#join',
+        icon: <Send className="size-8 text-primary" />,
+    },
+    {
+        key: 'availability',
+        defaultHref: '#join',
+        icon: <PersonStanding className="size-8 text-primary" />,
+    },
+    {
+        key: 'privacy',
+        defaultHref: '#join',
+        icon: <ShieldEllipsis className="size-8 text-primary" />,
+    },
+] as const
+
+export const AboutSection = async ({
+    title,
+    description,
     mainImage = {
         src: 'https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3',
-        alt: 'Small business using EasyBooking on laptop and phone',
-    },
-    breakout = {
-        src: 'https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg',
-        alt: 'EasyBooking mark',
-        title: 'Easy to start',
-        description: 'Launch a branded booking page in minutes — no apps or coding.',
-        buttonText: 'Create your page',
-        buttonUrl: '#get-started',
+        alt: '',
     },
 }: About3Props = {}) => {
-    // Four unique tiles (no repetition)
-    const tiles = [
-        {
-            title: 'Instant onboarding',
-            description:
-                'Add services and working hours — your booking page goes live immediately. No apps, no training.',
-            buttonText: 'Start now',
-            buttonUrl: '#get-started',
-        },
-        {
-            title: 'Share & embed anywhere',
-            description:
-                'Use a single link or drop our widget into your website. Works great in Instagram bio and messengers.',
-            buttonText: 'Get the widget',
-            buttonUrl: '#widget',
-        },
-        {
-            title: 'Availability rules that fit you',
-            description:
-                'Set buffers, quiet hours, days off, and staff-specific schedules. Slots adapt automatically.',
-            buttonText: 'Set availability',
-            buttonUrl: '#availability',
-        },
-        {
-            title: 'EU privacy & easy export',
-            description:
-                'Multilingual (EN/LV/RU), GDPR-minded, and simple CSV/Sheets export when you need your data.',
-            buttonText: 'Learn more',
-            buttonUrl: '#privacy',
-        },
-    ]
+    const t = await getTranslations('Landing.about')
+    const resolvedTitle = title ?? t('title')
+    const resolvedDescription = description ?? t('description')
+    const resolvedMainImage = {
+        src: mainImage?.src,
+        alt: mainImage?.alt || t('mainImageAlt'),
+    }
 
     return (
         <section className="py-16">
             <>
                 <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
-                    <h1 className="text-5xl font-semibold">{title}</h1>
-                    <p className="text-muted-foreground">{description}</p>
+                    <h1 className="text-5xl font-semibold">{resolvedTitle}</h1>
+                    <p className="text-muted-foreground">{resolvedDescription}</p>
                 </div>
 
                 <div className="grid gap-4 lg:grid-cols-4">
-                    <img
-                        alt={mainImage.alt}
-                        className="size-full rounded-xl object-cover w-full col-span-2"
-                        src={mainImage.src}
-                    />
+                    <AnimatedContent className={'col-span-2'}>
+                        <Image
+                            alt={resolvedMainImage.alt}
+                            className="size-full rounded-xl object-cover w-full col-span-2"
+                            src={resolvedMainImage.src}
+                            width={700}
+                            height={700}
+                        />
+                    </AnimatedContent>
 
                     <div className="grid md:grid-cols-2 md:grid-rows-2 col-span-2 gap-4">
-                        {tiles.map((t, i) => (
-                            <div
+                        {tiles.map(({ key, defaultHref, icon }, i) => (
+                            <AnimatedContent
                                 key={i}
                                 className="bg-muted flex row-span-1 flex-col justify-between gap-6 rounded-xl p-7 lg:w-auto"
                             >
-                                {/* Reuse the provided breakout image/mark to keep brand consistent */}
-                                <img alt={breakout.alt} className="mr-auto h-12" src={breakout.src} />
-                                <div>
-                                    <p className="mb-2 text-lg font-semibold">{t.title}</p>
-                                    <p className="text-muted-foreground">{t.description}</p>
+                                <div className="flex flex-col gap-2">
+                                    {icon}
+                                    <div>
+                                        <p className="mb-2 text-lg font-semibold">
+                                            {t(`tiles.${key}.title`)}
+                                        </p>
+                                        <p className="text-muted-foreground">
+                                            {t(`tiles.${key}.description`)}
+                                        </p>
+                                    </div>
                                 </div>
-                                <Button
+                                {/* <Button
                                     asChild
                                     className="btn-hero btn-hero--blue text-black w-full sm:w-auto"
                                     size={'lg'}
                                     variant="default"
                                 >
-                                    <a
-                                        href={t.buttonUrl}
-                                        target={t.buttonUrl.startsWith('http') ? '_blank' : undefined}
-                                    >
-                                        {t.buttonText}
-                                    </a>
-                                </Button>
-                            </div>
+                                    <Link href={defaultHref}>{t(`tiles.${key}.cta`)}</Link>
+                                </Button> */}
+                            </AnimatedContent>
                         ))}
                     </div>
                 </div>
