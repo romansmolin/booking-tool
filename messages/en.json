@@ -153,6 +153,29 @@
             "error": "Unable to join the waitlist. Please try again.",
             "invalidEmail": "Please provide a valid email address.",
             "joinedCount": "+100 people already joined"
+        },
+        "contact": {
+            "eyebrow": "Need help?",
+            "title": "Let’s build something together",
+            "subtitle": "Send us a note and we’ll get back within 24 hours.",
+            "nameLabel": "Name",
+            "namePlaceholder": "Enter your name",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Enter your email",
+            "messageLabel": "Message",
+            "messagePlaceholder": "Tell us how we can help",
+            "disclaimer": "By submitting this form you agree to be contacted about Booqly updates.",
+            "submit": "Send message",
+            "submitting": "Sending...",
+            "success": "Thanks! We received your message and will reply soon.",
+            "errorGeneric": "We couldn’t send your message. Please try again.",
+            "validation": {
+                "nameMin": "Please enter at least 2 characters.",
+                "nameMax": "Name can’t be longer than 120 characters.",
+                "email": "Please provide a valid email address.",
+                "messageMin": "Tell us a bit more about your request (at least 10 characters).",
+                "messageMax": "Message is too long. Please keep it under 2000 characters."
+            }
         }
     },
     "HomePage": {

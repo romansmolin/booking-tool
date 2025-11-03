@@ -7,6 +7,7 @@ import React from 'react'
 
 import { featuresData } from '../../const/features'
 import { AboutSection } from '../about-section/about-section'
+import { ContactSection } from '../contact-section'
 import CtaSection from '../cta-section/cta-section'
 import FeatureSection from '../feature-section/feature-section'
 import { HeroSection } from '../hero-section/hero-section'
@@ -75,6 +76,10 @@ const LandingPage = async () => {
 
             <section id="join">
                 <JoinWaitlistSection />
+            </section>
+
+            <section id="contact">
+                <ContactSection />
             </section>
 
             {/* 

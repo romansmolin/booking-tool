@@ -45,9 +45,9 @@ const LandingPageLayout = async ({
                     defaultTheme="dark"
                 >
                     <NextIntlClientProvider locale={locale} messages={messages}>
-                        <div className="flex flex-col max-w-7xl gap-26 px-2 py-2 mx-auto">
+                        <div className="flex flex-col max-w-7xl gap-14 md:gap-26 px-2 py-2 mx-auto">
                             <Header />
-                            <main className="m-auto min-h-svh px-2 flex flex-col space-y-32">
+                            <main className="m-auto min-h-svh px-2 flex flex-col space-y-40">
                                 {children}
                             </main>
                         </div>

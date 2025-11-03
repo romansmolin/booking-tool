@@ -26,7 +26,7 @@ export const HeroSection = async () => {
         <section className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-10 rounded-3xl px-6 text-center md:gap-12 md:px-14">
             <div className="flex flex-col gap-8 md:gap-8">
                 <AnimatedContent {...BASE_ANIMATION_PROPS} duration={0.45} delay={0}>
-                    <div className="mx-auto flex w-fit items-center gap-3 rounded-full bg-primary/50 px-6 py-2 text-sm font-semibold uppercase tracking-[0.35em] text-white shadow-[0px_0px_45px_10px_rgba(74,144,226,0.6)]">
+                    <div className="mx-auto text-[10px] flex w-fit items-center gap-3 rounded-full bg-primary/50 px-6 py-2 sm:text-sm font-semibold uppercase tracking-[0.35em] text-white shadow-[0px_0px_45px_10px_rgba(74,144,226,0.6)]">
                         <Heart className="animate-pulse" />
                         {t('badge')}
                     </div>

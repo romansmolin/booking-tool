@@ -1,7 +1,7 @@
 'use client'
 
 import { signUpOnNewsletter } from '@/features/waitlist/api/sign-up-on-newsletter'
-import { DoodleArrow2 } from '@/shared/assets/doodle-arrow2'
+import { DoodleArrow2 } from '@/shared/assets'
 import { emailValidationErrorMessage, isValidEmail, normalizeEmail } from '@/shared/lib/validators'
 import { Avatar, AvatarImage } from '@/shared/ui/avatar'
 import { Button } from '@/shared/ui/button'
@@ -74,12 +74,12 @@ export const JoinWaitlistSection = () => {
                     className="mt-10 flex w-full max-w-md flex-col gap-4"
                     onSubmit={handleSubmit}
                 >
-                    <div className="flex flex-col gap-3  p-2 shadow-sm sm:flex-row sm:items-center sm:rounded-full">
+                    <div className="flex flex-col gap-3 p-2 sm:flex-row sm:items-center">
                         <Input
                             aria-invalid={errorMessage ? true : undefined}
                             aria-label={t('emailAriaLabel')}
                             autoComplete="email"
-                            className="h-12 w-full  border-none bg-background px-4 shadow-none ring-0 focus-visible:outline-none focus-visible:ring-0 active:outline-0 active:ring-0 sm:bg-transparent sm:px-0"
+                            className="h-12 w-full border-none  px-4 ring-0 focus-visible:outline-none focus-visible:ring-0 active:outline-0 active:ring-0 sm:bg-transparent sm:px-4"
                             placeholder={t('emailPlaceholder')}
                             type="email"
                             value={email}

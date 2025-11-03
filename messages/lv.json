@@ -153,6 +153,29 @@
             "error": "Neizdevās pievienoties. Lūdzu, mēģiniet vēlreiz.",
             "invalidEmail": "Lūdzu, ievadiet derīgu e-pastu.",
             "joinedCount": "+100 cilvēki jau pievienojās"
+        },
+        "contact": {
+            "eyebrow": "Nepieciešama palīdzība?",
+            "title": "Sazinieties ar mums",
+            "subtitle": "Aizpildiet veidlapu, un atbildēsim 24 stundu laikā.",
+            "nameLabel": "Vārds",
+            "namePlaceholder": "Ievadiet savu vārdu",
+            "emailLabel": "E-pasts",
+            "emailPlaceholder": "Ievadiet e-pastu",
+            "messageLabel": "Ziņa",
+            "messagePlaceholder": "Pastāstiet, kā varam palīdzēt",
+            "disclaimer": "Nosūtot formu, jūs piekrītat saņemt atbildes un Booqly jaunumus.",
+            "submit": "Sūtīt ziņu",
+            "submitting": "Nosūtām...",
+            "success": "Paldies! Mēs saņēmām jūsu ziņu un drīz atbildēsim.",
+            "errorGeneric": "Neizdevās nosūtīt ziņu. Lūdzu, mēģiniet vēlreiz.",
+            "validation": {
+                "nameMin": "Lūdzu, ievadiet vismaz 2 rakstzīmes.",
+                "nameMax": "Vārds nedrīkst pārsniegt 120 rakstzīmes.",
+                "email": "Lūdzu, ievadiet derīgu e-pasta adresi.",
+                "messageMin": "Lūdzu, uzrakstiet vismaz 10 rakstzīmes.",
+                "messageMax": "Ziņa ir pārāk gara. Lūdzu, saīsiniet līdz 2000 rakstzīmēm."
+            }
         }
     },
     "HomePage": {

@@ -72,7 +72,7 @@ export const Header = () => {
             </div>
 
             <div className="hidden gap-3 md:flex">
-                <Button
+                {/* <Button
                     asChild
                     className="btn-hero text-lg font-semibold text-slate-900 "
                     size="lg"
@@ -81,14 +81,14 @@ export const Header = () => {
                     <Link href="#how-it-works">
                         <span>{t('demo')}</span>
                     </Link>
-                </Button>
+                </Button> */}
                 <Button
                     asChild
                     className="btn-hero btn-hero--blue  text-lg font-semibold text-slate-900"
                     size="lg"
                     variant="ghost"
                 >
-                    <Link href="#join">
+                    <Link href="#contact">
                         <span>{t('contact')}</span>
                     </Link>
                 </Button>
