@@ -1,5 +1,6 @@
 'use client'
 
+import { LanguageSwitcher } from '@/features/i18n'
 import { ThemeToggler } from '@/features/theme'
 import { cn } from '@/shared/lib/utils'
 import { Button } from '@/shared/ui/button'
@@ -39,7 +40,7 @@ const NavList = ({ direction = 'vertical', className }: NavListProps) => {
             {NAV_ITEMS.map((item) => (
                 <li key={item.href} className="group">
                     <Link
-                        className="block rounded-md px-2 text-lg font-extrabold border-primary transition-all duration-300"
+                        className="block rounded-lg px-2 text-lg font-extrabold border-primary transition-all duration-300"
                         href={item.href}
                     >
                         {t(item.key)}
@@ -66,12 +67,12 @@ export const Header = () => {
                     <span className="text-xl font-extrabold ">Booqly</span>
                 </Link>
 
-                <nav aria-label="Primary navigation" className="hidden md:block">
+                <nav aria-label="Primary navigation" className="hidden lg:block">
                     <NavList className="text-primary" direction="horizontal" />
                 </nav>
             </div>
 
-            <div className="hidden gap-3 md:flex">
+            <div className="hidden gap-3 lg:flex">
                 {/* <Button
                     asChild
                     className="btn-hero text-lg font-semibold text-slate-900 "
@@ -92,13 +93,14 @@ export const Header = () => {
                         <span>{t('contact')}</span>
                     </Link>
                 </Button>
+                <LanguageSwitcher />
                 <ThemeToggler />
             </div>
             <Sheet>
                 <SheetTrigger asChild>
                     <Button
                         aria-controls="mobile-navigation"
-                        className="border-primary bg-transparent text-primary md:hidden"
+                        className="border-primary bg-transparent text-primary lg:hidden"
                         size="icon"
                         type="button"
                         variant="outline"
@@ -109,7 +111,7 @@ export const Header = () => {
 
                 <SheetContent
                     aria-label="Mobile navigation"
-                    className="md:hidden gap-8 border-l border-primary px-4 py-6"
+                    className="lg:hidden gap-8 border-l border-primary px-4 py-6 z-500"
                 >
                     <SheetHeader className="flex items-start gap-3 p-0">
                         <SheetTitle className="sr-only">{t('navTitle')}</SheetTitle>

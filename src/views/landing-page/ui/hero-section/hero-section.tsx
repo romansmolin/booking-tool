@@ -67,6 +67,7 @@ export const HeroSection = async () => {
                 delay={0.36}
                 distance={110}
                 scale={1.15}
+                triggerOnMount
             >
                 <div className="relative w-full overflow-hidden rounded-[36px] border border-white/10 bg-slate-200/10 shadow-[0px_0px_45px_10px_rgba(74,144,226,0.6)]">
                     <div className="aspect-video w-full">

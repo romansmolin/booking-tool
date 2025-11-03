@@ -22,6 +22,7 @@ interface AnimatedContentProps {
     onComplete?: () => void
     className?: string
     style?: CSSProperties
+    triggerOnMount?: boolean
 }
 
 const AnimatedContent: React.FC<AnimatedContentProps> = ({
@@ -39,6 +40,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
     onComplete,
     className = '',
     style,
+    triggerOnMount = false,
 }) => {
     // eslint-disable-next-line no-undef
     const ref = useRef<HTMLDivElement>(null)
@@ -88,12 +90,14 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
             ease,
             delay,
             onComplete,
-            scrollTrigger: {
-                trigger: el,
-                start: `top ${startPct}%`,
-                toggleActions: 'play none none none',
-                once: true,
-            },
+            scrollTrigger: triggerOnMount
+                ? undefined
+                : {
+                      trigger: el,
+                      start: `top ${startPct}%`,
+                      toggleActions: 'play none none none',
+                      once: true,
+                  },
         })
 
         return () => {
@@ -112,6 +116,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
         threshold,
         delay,
         onComplete,
+        triggerOnMount,
     ])
 
     return (
