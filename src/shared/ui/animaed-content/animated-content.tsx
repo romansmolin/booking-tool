@@ -3,7 +3,7 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import React, { ReactNode, useEffect, useRef } from 'react'
+import React, { CSSProperties, ReactNode, useEffect, useMemo, useRef } from 'react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -21,14 +21,15 @@ interface AnimatedContentProps {
     delay?: number
     onComplete?: () => void
     className?: string
+    style?: CSSProperties
 }
 
 const AnimatedContent: React.FC<AnimatedContentProps> = ({
     children,
-    distance = 100,
+    distance = 60,
     direction = 'vertical',
     reverse = false,
-    duration = 0.8,
+    duration = 0.55,
     ease = 'power3.out',
     initialOpacity = 0,
     animateOpacity = true,
@@ -37,26 +38,50 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
     delay = 0,
     onComplete,
     className = '',
+    style,
 }) => {
     // eslint-disable-next-line no-undef
     const ref = useRef<HTMLDivElement>(null)
+    const axis = direction === 'horizontal' ? 'X' : 'Y'
+    const offset = reverse ? -distance : distance
+
+    const initialStyle = useMemo(() => {
+        const transformParts = []
+
+        if (offset !== 0) {
+            transformParts.push(`translate${axis}(${offset}px)`)
+        }
+
+        if (scale !== 1) {
+            transformParts.push(`scale(${scale})`)
+        }
+
+        const transform = transformParts.length > 0 ? transformParts.join(' ') : undefined
+
+        return {
+            ...style,
+            opacity: animateOpacity ? initialOpacity : 1,
+            transform,
+            visibility: 'hidden',
+        } as CSSProperties
+    }, [animateOpacity, initialOpacity, offset, scale, axis, style])
 
     useEffect(() => {
         const el = ref.current
         if (!el) return
 
-        const axis = direction === 'horizontal' ? 'x' : 'y'
-        const offset = reverse ? -distance : distance
+        const axisKey = direction === 'horizontal' ? 'x' : 'y'
         const startPct = (1 - threshold) * 100
 
         gsap.set(el, {
-            [axis]: offset,
+            [axisKey]: offset,
             scale,
             opacity: animateOpacity ? initialOpacity : 1,
+            visibility: 'visible',
         })
 
-        gsap.to(el, {
-            [axis]: 0,
+        const tween = gsap.to(el, {
+            [axisKey]: 0,
             scale: 1,
             opacity: 1,
             duration,
@@ -72,8 +97,8 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
         })
 
         return () => {
-            ScrollTrigger.getAll().forEach((t) => t.kill())
-            gsap.killTweensOf(el)
+            tween.scrollTrigger?.kill()
+            tween.kill()
         }
     }, [
         distance,
@@ -90,7 +115,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
     ])
 
     return (
-        <div ref={ref} className={className}>
+        <div ref={ref} className={className} style={initialStyle}>
             {children}
         </div>
     )

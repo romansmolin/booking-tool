@@ -1,10 +1,10 @@
-import React from 'react'
-
 import { AnimatedContent } from '@/shared/ui/animaed-content'
 import { Button } from '@/shared/ui/button'
 import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import React from 'react'
 
 const CTA_IMAGE =
     'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3'
@@ -13,17 +13,17 @@ const CtaSection = async () => {
     const t = await getTranslations('Landing.cta')
 
     return (
-        <section className="mx-auto w-full py-16">
+        <section className="mx-auto w-full ">
             <AnimatedContent
                 animateOpacity
-                delay={0.1}
+                delay={0.04}
                 direction="vertical"
-                distance={80}
-                duration={0.9}
+                distance={60}
+                duration={0.6}
                 initialOpacity={0}
                 reverse={false}
                 scale={1.05}
-                threshold={0.25}
+                threshold={0.2}
             >
                 <div className="relative overflow-hidden rounded-3xl bg-card px-8 py-12 text-center text-slate-50 ring-1 ring-border/60">
                     <Image

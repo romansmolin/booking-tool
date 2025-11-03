@@ -3,7 +3,7 @@ import { routing } from '@/shared/i18n/routing'
 import { Header } from '@/widgets/header'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getMessages } from 'next-intl/server'
-import { Nunito } from 'next/font/google'
+import { Delius, Nunito } from 'next/font/google'
 import { notFound } from 'next/navigation'
 
 import React, { ReactNode } from 'react'
@@ -14,6 +14,10 @@ const nunito = Nunito({
     weight: ['400', '500', '600', '700'],
     subsets: ['latin', 'latin-ext', 'cyrillic'],
     display: 'swap',
+})
+
+const delius = Delius({
+    weight: ['400'],
 })
 
 const LandingPageLayout = async ({
@@ -43,7 +47,9 @@ const LandingPageLayout = async ({
                     <NextIntlClientProvider locale={locale} messages={messages}>
                         <div className="flex flex-col max-w-7xl gap-26 px-2 py-2 mx-auto">
                             <Header />
-                            <main className="m-auto min-h-svh px-2 flex flex-col">{children}</main>
+                            <main className="m-auto min-h-svh px-2 flex flex-col space-y-32">
+                                {children}
+                            </main>
                         </div>
                     </NextIntlClientProvider>
                 </ThemeProvider>

@@ -24,7 +24,7 @@ export const HowItWorks = async () => {
     const t = await getTranslations('Landing.howItWorks')
 
     return (
-        <section className="flex items-center justify-center py-16">
+        <section className="flex items-center justify-center ">
             <div className="flex flex-col gap-12">
                 <h2 className="text-4xl font-bold tracking-tight text-center sm:text-5xl md:text-6xl">
                     {t.rich('title', {

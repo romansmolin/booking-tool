@@ -79,7 +79,7 @@ export const JoinWaitlistSection = () => {
                             aria-invalid={errorMessage ? true : undefined}
                             aria-label={t('emailAriaLabel')}
                             autoComplete="email"
-                            className="h-12 w-full border-none bg-background px-4 shadow-none ring-0 focus-visible:outline-none focus-visible:ring-0 active:outline-0 active:ring-0 sm:bg-transparent sm:px-0"
+                            className="h-12 w-full  border-none bg-background px-4 shadow-none ring-0 focus-visible:outline-none focus-visible:ring-0 active:outline-0 active:ring-0 sm:bg-transparent sm:px-0"
                             placeholder={t('emailPlaceholder')}
                             type="email"
                             value={email}
@@ -115,11 +115,12 @@ export const JoinWaitlistSection = () => {
                     <p className="text-muted-foreground/80 tracking-tight">{t('joinedCount')}</p>
                 </div>
             </div>
+            <DoodleArrow2 className="absolute hidden md:block md:size-28 md:left-0 fill-primary rotate-32 bottom-0 lg:left-20" />
+            <DoodleArrow2 className="absolute hidden md:block md:size-28 md:left-0 fill-primary -rotate-32 -scale-y-100 top-0 lg:left-20" />
 
-            <DoodleArrow2 className="fill-primary" />
-            <DoodleArrow2 className="fill-primary" />
-            <DoodleArrow2 className="fill-primary" />
-            <DoodleArrow2 className="fill-primary" />
+            {/* <DoodleArrow2 className="fill-primary" /> */}
+            <DoodleArrow2 className="absolute hidden md:block md:size-28 md:right-0 lg:right-20 bottom-0 fill-primary -scale-x-100 -rotate-32" />
+            <DoodleArrow2 className="absolute hidden md:block md:size-28 md:right-0 lg:right-20 top-0 fill-primary -scale-x-100 -scale-y-100 rotate-32" />
         </section>
     )
 }

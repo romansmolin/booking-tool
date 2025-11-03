@@ -77,7 +77,7 @@ export const AboutSection = async ({
     }
 
     return (
-        <section className="py-16">
+        <section className="">
             <>
                 <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
                     <h1 className="text-5xl font-semibold">{resolvedTitle}</h1>

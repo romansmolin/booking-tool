@@ -31,17 +31,17 @@ const FeatureSection = ({
     const isImageLeft = position === 'left'
 
     return (
-        <section className="flex items-center justify-center py-16 ">
+        <section className="flex items-center justify-center  ">
             <AnimatedContent
                 animateOpacity
-                delay={0.1}
+                delay={0.06}
                 direction="vertical"
-                distance={100}
-                duration={1}
+                distance={70}
+                duration={0.65}
                 initialOpacity={0}
                 reverse={false}
-                scale={1.1}
-                threshold={0.2}
+                scale={1.08}
+                threshold={0.18}
             >
                 <div className="flex w-full max-w-6xl flex-col gap-10 rounded-3xl bg-card md:grid md:grid-cols-2 md:items-center md:gap-16 overflow-hidden h-[70%] shadow-[0_30px_80px_rgba(15,23,42,0.5)]">
                     <div
