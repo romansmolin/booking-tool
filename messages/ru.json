@@ -3,8 +3,9 @@
         "brandAriaLabel": "На главную Booqly",
         "nav": {
             "features": "Возможности",
-            "solutions": "Решения",
-            "faq": "FAQ",
+            "howItWorks": "Как это работает",
+            "about": "О продукте",
+            "contact": "Контакты",
             "join": "Присоединиться"
         },
         "demo": "Демо",

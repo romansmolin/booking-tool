@@ -3,8 +3,9 @@
         "brandAriaLabel": "Booqly sākumlapa",
         "nav": {
             "features": "Iespējas",
-            "solutions": "Risinājumi",
-            "faq": "BUJ",
+            "howItWorks": "Kā tas strādā",
+            "about": "Par Booqly",
+            "contact": "Kontakti",
             "join": "Pievienoties"
         },
         "demo": "Demo",

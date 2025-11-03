@@ -14,17 +14,19 @@ import React from 'react'
 
 const NAV_ITEMS = [
     { key: 'features', href: '#features' },
-    { key: 'solutions', href: '#solutions' },
-    { key: 'faq', href: '#faq' },
+    { key: 'howItWorks', href: '#how-it-works' },
+    { key: 'about', href: '#about' },
+    { key: 'contact', href: '#contact' },
     { key: 'join', href: '#join' },
 ] as const
 
 type NavListProps = {
     direction?: 'horizontal' | 'vertical'
     className?: string
+    onNavigate?: (href: string) => void
 }
 
-const NavList = ({ direction = 'vertical', className }: NavListProps) => {
+const NavList = ({ direction = 'vertical', className, onNavigate }: NavListProps) => {
     const t = useTranslations('Header.nav')
 
     return (
@@ -42,6 +44,12 @@ const NavList = ({ direction = 'vertical', className }: NavListProps) => {
                     <Link
                         className="block rounded-lg px-2 text-lg font-extrabold border-primary transition-all duration-300"
                         href={item.href}
+                        onClick={(event) => {
+                            if (onNavigate) {
+                                event.preventDefault()
+                                onNavigate(item.href)
+                            }
+                        }}
                     >
                         {t(item.key)}
                     </Link>
@@ -54,6 +62,43 @@ const NavList = ({ direction = 'vertical', className }: NavListProps) => {
 
 export const Header = () => {
     const t = useTranslations('Header')
+    const [isSheetOpen, setIsSheetOpen] = React.useState(false)
+    const [pendingHref, setPendingHref] = React.useState<string | null>(null)
+
+    const handleMobileNavigate = React.useCallback((href: string) => {
+        setPendingHref(href)
+        setIsSheetOpen(false)
+    }, [])
+
+    React.useEffect(() => {
+        if (typeof window === 'undefined') return
+        if (isSheetOpen) return
+        if (!pendingHref) return
+
+        const href = pendingHref
+        const scrollToTarget = () => {
+            if (href.startsWith('#')) {
+                const target = document.querySelector(href)
+                if (target instanceof HTMLElement) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    if ('history' in window) {
+                        window.history.replaceState(null, '', href)
+                    }
+                }
+            } else {
+                window.location.href = href
+            }
+            setPendingHref(null)
+        }
+
+        const timer = window.setTimeout(() => {
+            window.requestAnimationFrame(scrollToTarget)
+        }, 250)
+
+        return () => {
+            window.clearTimeout(timer)
+        }
+    }, [isSheetOpen, pendingHref])
 
     return (
         <header className="flex w-full bg-card items-center justify-between gap-3 rounded-xl border border-primary px-3 py-4 shadow-sm">
@@ -96,7 +141,7 @@ export const Header = () => {
                 <LanguageSwitcher />
                 <ThemeToggler />
             </div>
-            <Sheet>
+            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                 <SheetTrigger asChild>
                     <Button
                         aria-controls="mobile-navigation"
@@ -126,7 +171,7 @@ export const Header = () => {
                     </SheetHeader>
 
                     <nav id="mobile-navigation">
-                        <NavList className="text-primary" />
+                        <NavList className="text-primary" onNavigate={handleMobileNavigate} />
                     </nav>
                 </SheetContent>
             </Sheet>

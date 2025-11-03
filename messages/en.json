@@ -3,9 +3,10 @@
         "brandAriaLabel": "Booqly home",
         "nav": {
             "features": "Features",
-            "solutions": "Solutions",
-            "faq": "FAQ",
-            "join": "Join Us"
+            "howItWorks": "How it works",
+            "about": "About",
+            "contact": "Contact",
+            "join": "Join us"
         },
         "demo": "Demo",
         "contact": "Contact",
