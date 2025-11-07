@@ -42,7 +42,7 @@ const localeAssets: Record<
     },
 }
 
-export const LanguageSwitcher = () => {
+export const LanguageSwitcher = ({ menuTriggerClass = '' }: { menuTriggerClass?: string }) => {
     const locale = useLocale() as LocaleCode
     const pathname = usePathname()
     const router = useRouter()
@@ -64,7 +64,7 @@ export const LanguageSwitcher = () => {
             <DropdownMenuTrigger asChild>
                 <Button
                     aria-label={t('label')}
-                    className="size-12 p-2!"
+                    className={cn('size-12 p-2!', menuTriggerClass)}
                     disabled={isPending}
                     variant="outline"
                 >

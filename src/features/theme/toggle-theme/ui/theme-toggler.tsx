@@ -1,14 +1,18 @@
+import { cn } from '@/shared/lib/utils'
 import { Button } from '@/shared/ui/button'
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 import React from 'react'
 
-export const ThemeToggler = () => {
+export const ThemeToggler = ({ className = '' }: { className?: string }) => {
     const { theme, setTheme } = useTheme()
     return (
         <Button
-            className="size-12 justify-center bg-transparent border border-primary p-2 hover:[&>div>svg]:text-white"
+            className={cn(
+                'size-12 justify-center bg-transparent border border-primary p-2 hover:[&>div>svg]:text-white',
+                className
+            )}
             size="icon"
             variant="outline"
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}

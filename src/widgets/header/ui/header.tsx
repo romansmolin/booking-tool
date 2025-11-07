@@ -10,7 +10,7 @@ import { MenuIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const NAV_ITEMS = [
     { key: 'features', href: '#features' },
@@ -70,7 +70,7 @@ export const Header = () => {
         setIsSheetOpen(false)
     }, [])
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (typeof window === 'undefined') return
         if (isSheetOpen) return
         if (!pendingHref) return
@@ -142,17 +142,22 @@ export const Header = () => {
                 <ThemeToggler />
             </div>
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-                <SheetTrigger asChild>
-                    <Button
-                        aria-controls="mobile-navigation"
-                        className="border-primary bg-transparent text-primary lg:hidden"
-                        size="icon"
-                        type="button"
-                        variant="outline"
-                    >
-                        <MenuIcon aria-hidden="true" />
-                    </Button>
-                </SheetTrigger>
+                <div className="lg:hidden flex items-center gap-2">
+                    <LanguageSwitcher menuTriggerClass="size-9" />
+                    <ThemeToggler className="size-9" />
+
+                    <SheetTrigger asChild>
+                        <Button
+                            aria-controls="mobile-navigation"
+                            className="border-primary bg-transparent text-primary lg:hidden"
+                            size="icon"
+                            type="button"
+                            variant="outline"
+                        >
+                            <MenuIcon aria-hidden="true" />
+                        </Button>
+                    </SheetTrigger>
+                </div>
 
                 <SheetContent
                     aria-label="Mobile navigation"
